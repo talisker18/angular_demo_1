@@ -1,0 +1,18 @@
+<div class="row">
+    <div class="col-xs-12">
+      <p>Add new Servers or blueprints!</p>
+      <label>Server Name</label>
+      <!--<input type="text" class="form-control" [(ngModel)]="newServerName"> see following line using local reference instead of using 2-way-bind-->
+      <input type="text" class="form-control" #serverNameInput> <!--this will hold a reference to the whole input element-->
+      <label>Server Content</label>
+      <!--<input type="text" class="form-control" [(ngModel)]="newServerContent">--> <!--using 2-way-bind for server content! see next line for other approach-->
+      <input type="text" class="form-control" #serverContentInput> <!--declare local reference. In .ts-->
+      <br>
+      <button
+        class="btn btn-primary"
+        (click)="onAddServer(serverNameInput)">Add Server</button>
+      <button
+        class="btn btn-primary"
+        (click)="onAddBlueprint(serverNameInput)">Add Server Blueprint</button>
+    </div>
+</div>

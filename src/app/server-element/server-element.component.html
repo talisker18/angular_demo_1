@@ -1,0 +1,11 @@
+<div
+        class="panel panel-default">
+        <div class="panel-heading" #heading>{{ element.name }}</div> <!--make a local reference for the header div-->
+        <div class="panel-body">
+          <p>
+            <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
+            <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
+            <!--instead of using *ngIf here, we could also use <ng-content> tag here and remove the ngIf's here. Then in app.component.html, do the *ngIf's there and just replace 'element' with 'currentServerElement' because we use this var in the loop. For example: <strong *ngIf="currentServerElement.type === 'server'" style="color: red">{{ currentServerElement.content }}</strong>-->
+          </p>
+        </div>
+      </div>
